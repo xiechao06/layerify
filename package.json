@@ -1,0 +1,34 @@
+{
+  "name": "layerify",
+  "version": "1.0.0",
+  "description": "make an un-nested object into a nested object by object keys",
+  "main": "build/index.cjs.js",
+  "module": "build/index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "./build.sh",
+    "clean": "rm -rf build",
+    "prepare": "./build.sh",
+    "lint": "eslint index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiechao06/layerify.git"
+  },
+  "author": "xiechao06",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiechao06/layerify/issues"
+  },
+  "homepage": "https://github.com/xiechao06/layerify#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "mocha": "^5.1.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-uglify": "^3.0.0",
+    "uglify-js": "^3.3.23"
+  }
+}
