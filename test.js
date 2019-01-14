@@ -1,27 +1,27 @@
-const assert = require('assert');
-const layerify = require('./build/index.cjs.js');
+const assert = require('assert')
+const layerify = require('./')
 
-describe('not nested', function() {
+it('not nested', function () {
   let d = {
     a: 1,
-    b: 2,
-  };
-  assert.deepEqual(d, layerify(d));
-});
+    b: 2
+  }
+  assert.strict.deepEqual(d, layerify(d))
+})
 
-describe('nested', function() {
+it('nested', function () {
   let d = {
     a: 1,
     b: 2,
     c__x: 1,
     d__y__n: 1,
     d__y__m: 2
-  };
-  assert.deepEqual({
+  }
+  assert.strict.deepEqual({
     a: 1,
     b: 2,
     c: {
-      x: 1,
+      x: 1
     },
     d: {
       y: {
@@ -29,20 +29,45 @@ describe('nested', function() {
         m: 2
       }
     }
-  }, layerify(d));
-});
+  }, layerify(d))
+})
 
-
-describe('ignore null or undefined', function() {
+it('ignore null or undefined', function () {
   let d = {
     a: 1,
     b: 2,
     c__x: void 0,
     d__y__n: null,
-    d__y__m: null,
-  };
-  assert.deepEqual({
+    d__y__m: null
+  }
+  assert.strict.deepEqual({
     a: 1,
-    b: 2,
-  }, layerify(d));
-});
+    b: 2
+  }, layerify(d))
+})
+
+it('array', function () {
+  assert.strict.deepEqual([
+    {
+      a: 1,
+      b: 2
+    }, {
+      c: 3,
+      d: {
+        e: 1,
+        f: 2
+      }
+    }
+  ], layerify([
+    {
+      a: 1,
+      b: 2,
+      x: null
+    }, {
+      c: 3,
+      d__e: 1,
+      d__f: 2,
+      d__y: void 0
+    }
+  ]))
+})

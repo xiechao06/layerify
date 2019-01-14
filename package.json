@@ -5,11 +5,12 @@
   "main": "build/index.cjs.js",
   "module": "build/index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --watch --require @babel/register",
+    "dev": "mocha --watch --require @babel/register --require @babel/polyfill --require source-map-support -w",
     "build": "./build.sh",
     "clean": "rm -rf build",
-    "prepare": "./build.sh",
-    "lint": "eslint index.js"
+    "prepublishOnly": "npm run build",
+    "lint": "standard *.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,23 @@
   },
   "homepage": "https://github.com/xiechao06/layerify#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
     "mocha": "^5.1.1",
     "rollup": "^0.58.2",
-    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-uglify": "^3.0.0",
+    "standard": "^12.0.1",
     "uglify-js": "^3.3.23"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
+  },
+  "dependencies": {
+    "@babel/plugin-external-helpers": "^7.2.0"
   }
 }

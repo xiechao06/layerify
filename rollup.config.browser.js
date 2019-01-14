@@ -1,5 +1,5 @@
-import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify';
+import babel from 'rollup-plugin-babel'
+import uglify from 'rollup-plugin-uglify'
 
 export default {
   input: 'index.js',
@@ -7,10 +7,10 @@ export default {
     file: 'build/layerify.min.js',
     format: 'iife',
     name: 'layerify',
-    sourcemap: true,
+    sourcemap: true
   },
   plugins: [
     babel(),
-    uglify(),
+    uglify()
   ]
-};
+}
