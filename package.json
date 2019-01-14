@@ -1,6 +1,6 @@
 {
   "name": "layerify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "make an un-nested object into a nested object by object keys",
   "main": "build/index.cjs.js",
   "module": "build/index.js",
