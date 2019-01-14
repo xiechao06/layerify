@@ -5,8 +5,8 @@
   "main": "build/index.cjs.js",
   "module": "build/index.js",
   "scripts": {
-    "test": "mocha --watch --require @babel/register",
-    "dev": "mocha --watch --require @babel/register --require @babel/polyfill --require source-map-support -w",
+    "test": "mocha --require @babel/register",
+    "dev": "mocha --watch --require @babel/register",
     "build": "./build.sh",
     "clean": "rm -rf build",
     "prepublishOnly": "npm run build",
