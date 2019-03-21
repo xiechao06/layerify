@@ -1,5 +1,5 @@
-const assert = require('assert')
-const layerify = require('./')
+import assert from 'assert'
+import layerify from './index'
 
 it('not nested', function () {
   let d = {
