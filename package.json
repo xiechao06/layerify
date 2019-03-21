@@ -1,20 +1,22 @@
 {
   "name": "layerify",
-  "version": "0.1.1",
+  "version": "0.0.0-development",
   "description": "make an un-nested object into a nested object by object keys",
   "main": "build/index.cjs.js",
   "module": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiechao06/layerify.git"
+  },
   "scripts": {
     "test": "mocha --require @babel/register",
     "dev": "mocha --watch --require @babel/register",
     "build": "./build.sh",
     "clean": "rm -rf build",
     "prepublishOnly": "npm run build",
-    "lint": "standard *.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xiechao06/layerify.git"
+    "lint": "standard *.js",
+    "semantic-release": "semantic-release",
+    "commit": "npx git-cz"
   },
   "author": "xiechao06",
   "license": "MIT",
@@ -26,10 +28,14 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "2.1.0",
     "mocha": "^5.1.1",
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-uglify": "^3.0.0",
+    "semantic-release": "^15.13.3",
+    "semantic-release-cli": "^4.1.1",
     "standard": "^12.0.1",
     "uglify-js": "^3.3.23"
   },
@@ -41,5 +47,10 @@
   },
   "dependencies": {
     "@babel/plugin-external-helpers": "^7.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
