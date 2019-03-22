@@ -920,10 +920,77 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<h1 id="layerify-coverage-status">layerify <a href="https://coveralls.io/github/xiechao06/layerify?branch=master"><img src="https://coveralls.io/repos/github/xiechao06/layerify/badge.svg?branch=master" alt="Coverage Status"></a></h1>
+			<h1 id="layerify-license-mit-npm-version-build-status-dependency-status-coverage-percentage">layerify [<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">] <a href="https://npmjs.org/package/layerify"><img src="https://badge.fury.io/js/layerify.svg" alt="NPM version"></a> <a href="https://travis-ci.org/xiechao06/layerify"><img src="https://travis-ci.org/xiechao06/layerify.svg?branch=master" alt="Build Status"></a> <a href="https://david-dm.org/xiechao06/layerify"><img src="https://david-dm.org/xiechao06/layerify.svg?theme=shields.io" alt="Dependency Status"></a> <a href="https://coveralls.io/r/xiechao06/layerify"><img src="https://coveralls.io/repos/xiechao06/layerify/badge.svg" alt="Coverage percentage"></a></h1>
+			<p><a href="https:///xiechao06.github.io/layerify">homepage</a></p>
 			<p>make an un-nested object into a nested object by object keys</p>
-			<h1 id="usage">usage</h1>
-			<p>read test.js</p>
+			<h2 id="motivation">Motivation</h2>
+			<p>I prefer to use query builders like <a href="https://knexjs.org">knex</a> rather than ORMs like <a href="https://bookshelfjs.org/">bookshelf</a>, because they are more explicit and
+			still you could get validations compared to writing plain sql.</p>
+			<p>But it is a headache to write a bunch of mess like:</p>
+			<pre><code class="language-javascript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUser</span> (<span class="hljs-params">id</span>) </span>{
+  <span class="hljs-keyword">let</span> [user] = <span class="hljs-keyword">await</span> db(<span class="hljs-string">'users'</span>)
+    .join(<span class="hljs-string">'departments'</span>, <span class="hljs-string">'users.department_id'</span>, <span class="hljs-string">'departments.id'</span>)
+    .select(
+      <span class="hljs-string">'users.*'</span>,
+      <span class="hljs-string">'departments.id as departmentId'</span>,
+      <span class="hljs-string">'departments.name as departmentName'</span>
+    )
+    .where(<span class="hljs-string">'users.id'</span>, id)
+  user = {
+    <span class="hljs-attr">id</span>: user.id
+    name: user.name,
+    <span class="hljs-attr">department</span>: {
+      <span class="hljs-attr">id</span>: user.departmentId,
+      <span class="hljs-attr">name</span>: user.departmentName
+    }
+  }
+  <span class="hljs-keyword">return</span> user
+}</code></pre>
+			<p>I still need a way to make joined-query elegantly. so I make this utility library. So the aforementioned codes could be written as:</p>
+			<pre><code class="language-javascript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUser</span> (<span class="hljs-params">id</span>) </span>{
+  <span class="hljs-keyword">let</span> [user] = <span class="hljs-keyword">await</span> db(<span class="hljs-string">'users'</span>)
+    .join(<span class="hljs-string">'departments'</span>, <span class="hljs-string">'users.department_id'</span>, <span class="hljs-string">'departments.id'</span>)
+    .select(
+      <span class="hljs-string">'users.*'</span>,
+      <span class="hljs-comment">// assume departments is an object that defines the schema</span>
+      <span class="hljs-built_in">Object</span>.keys(departments).map(<span class="hljs-function"><span class="hljs-params">k</span> =&gt;</span> <span class="hljs-string">`department.<span class="hljs-subst">${k}</span> as department__<span class="hljs-subst">${k}</span>`</span>)
+    )
+    .where(<span class="hljs-string">'users.id'</span>, id)
+  <span class="hljs-keyword">return</span> layerify(user)
+}</code></pre>
+			<h2 id="installation">Installation</h2>
+			<pre><code class="language-bash">npm i layerify</code></pre>
+			<h2 id="basic-usage">Basic Usage</h2>
+			<pre><code class="language-javascript"><span class="hljs-keyword">const</span> layerify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'layerify'</span>) <span class="hljs-comment">// or import layerify from 'layerify'</span>
+
+layerify({
+  <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">b__a</span>: <span class="hljs-number">2</span>,
+}) <span class="hljs-comment">// { a: 1, b: { a: 2 } }</span>
+
+layerify([{
+  <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">b__a</span>: <span class="hljs-number">2</span>,
+}, {
+  <span class="hljs-attr">c__a</span>: <span class="hljs-number">3</span>
+}]) <span class="hljs-comment">// [{ a: 1, b: { a: 2 } }, { c: { a: 3 } }]</span>
+</code></pre>
+			<p>check <a href="https://github.com/xiechao06/layerify/blob/master/test/test.js">test/test.js</a> for more examples.</p>
+			<h2 id="see-also">See also</h2>
+			<ul>
+				<li><a href="https://www.npmjs.com/package/knex-pg-builder">knex-pg-builder</a></li>
+			</ul>
+			<h2 id="development">Development</h2>
+			<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/xiechao06/layerify
+<span class="hljs-built_in">cd</span> layerify
+npm <span class="hljs-built_in">test</span>
+npm <span class="hljs-built_in">test</span>:watch
+npm build
+npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
+			<h2 id="documentation">Documentation</h2>
+			<p><a href="https:///xiechao06.github.io/layerify">docs</a></p>
+			<h2 id="license">License</h2>
+			<p>MIT © xiechao <a href="mailto:&#x78;&#x69;&#x65;&#x63;&#104;&#97;&#111;&#48;&#x36;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x78;&#x69;&#x65;&#x63;&#104;&#97;&#111;&#48;&#x36;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -952,7 +1019,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in index.ts:34</li>
+								<li>Defined in <a href="https://github.com/xiechao06/layerify/blob/153b552/src/index.ts#L34">index.ts:34</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -990,7 +1057,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in index.ts:7</li>
+								<li>Defined in <a href="https://github.com/xiechao06/layerify/blob/153b552/src/index.ts#L7">index.ts:7</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
