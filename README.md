@@ -1,4 +1,6 @@
 # layerify [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[homepage](https:///xiechao06.github.io/layerify)
+
 make an un-nested object into a nested object by object keys
 
 ## Motivation
@@ -92,7 +94,7 @@ npm deploy:doc # deploy gh-pages
 
 ## Documentation
 
-check https:///xiechao06.github.io/layerify
+[docs](https:///xiechao06.github.io/layerify)
 
 ## License
 

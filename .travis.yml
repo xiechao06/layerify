@@ -18,4 +18,9 @@ jobs:
           - npx semantic-release
 
 after_success:
-  - npx report-coverage
+  - npm run report-coverage
+
+notifications:
+  email:
+    recipients:
+      - xiechao06@gmail.com
