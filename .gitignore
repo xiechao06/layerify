@@ -67,4 +67,8 @@ Session.vim
 .netrwhist
 *~
 
-build
+dist
+.rpt2_cache/
+doc/
+*.rej
+

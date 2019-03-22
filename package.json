@@ -2,23 +2,29 @@
   "name": "layerify",
   "version": "0.0.0-development",
   "description": "make an un-nested object into a nested object by object keys",
-  "main": "build/index.cjs.js",
-  "module": "build/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/xiechao06/layerify.git"
   },
   "scripts": {
-    "test": "mocha --require @babel/register",
-    "dev": "mocha --watch --require @babel/register",
-    "build": "./build.sh",
-    "clean": "rm -rf build",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "build": "run-s clean tsc rollup build:doc",
+    "tsc": "tsc --module commonjs",
+    "clean": "rimraf dist",
+    "rollup": "rollup -c",
+    "build:doc": "typedoc --out doc --mode file --theme minimal --module commonjs src",
     "prepublishOnly": "npm run build",
-    "lint": "standard *.js",
+    "deploy:doc": "NODE_DEBUG=gh-pages ts-node scripts/deploy-gh-pages.ts",
+    "lint": "tslint -p tsconfig.json *.ts",
     "semantic-release": "semantic-release",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "lint-staged": "lint-staged",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
-  "author": "xiechao06",
+  "author": "xiechao06 <xiechao06@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xiechao06/layerify/issues"
@@ -28,29 +34,53 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@types/gh-pages": "^2.0.0",
+    "@types/jest": "^24.0.11",
     "commitizen": "^3.0.7",
-    "cz-conventional-changelog": "2.1.0",
-    "mocha": "^5.2.0",
+    "coveralls": "^3.0.3",
+    "cz-conventional-changelog": "^2.1.0",
+    "gh-pages": "^2.0.1",
+    "husky": "^1.3.1",
+    "i": "^0.3.6",
+    "jest": "^24.5.0",
+    "lint-staged": "^8.1.5",
+    "npm": "^6.9.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "rollup": "^1.7.0",
-    "rollup-plugin-babel": "^4.3.0",
-    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.20.1",
     "semantic-release": "^15.13.8",
     "semantic-release-cli": "^4.1.1",
-    "standard": "^12.0.1",
-    "uglify-js": "^3.5.1"
-  },
-  "standard": {
-    "globals": [
-      "describe",
-      "it"
-    ]
-  },
-  "dependencies": {
-    "@babel/plugin-external-helpers": "^7.2.0"
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.14.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.4000"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
