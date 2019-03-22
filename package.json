@@ -22,7 +22,10 @@
     "semantic-release": "semantic-release",
     "commit": "npx git-cz",
     "lint-staged": "lint-staged",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "serve:doc": "run-p _serve:doc _open-doc",
+    "_serve:doc": "serve doc/",
+    "_open-doc": "sleep 0.1; opn http://127.0.0.1:5000"
   },
   "author": "xiechao06 <xiechao06@gmail.com>",
   "license": "MIT",
@@ -48,6 +51,7 @@
     "lint-staged": "^8.1.5",
     "npm": "^6.9.0",
     "npm-run-all": "^4.1.5",
+    "opn-cli": "^4.0.0",
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
     "rollup": "^1.7.0",
@@ -57,6 +61,7 @@
     "rollup-plugin-typescript2": "^0.20.1",
     "semantic-release": "^15.13.8",
     "semantic-release-cli": "^4.1.1",
+    "serve": "^10.1.2",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.3",
     "tslint": "^5.14.0",
