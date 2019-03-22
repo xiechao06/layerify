@@ -16,7 +16,7 @@
     "clean": "rimraf dist",
     "rollup": "rollup -c",
     "build:doc": "typedoc --out doc --mode file --theme minimal --module commonjs src",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "run-s lint build && pkg-ok",
     "deploy:doc": "NODE_DEBUG=gh-pages ts-node scripts/deploy-gh-pages.ts",
     "lint": "tslint -p tsconfig.json *.ts",
     "semantic-release": "semantic-release",
