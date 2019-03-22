@@ -98,7 +98,7 @@ npm deploy:doc # deploy gh-pages
 
 ## License
 
-MIT © xiechao <xiechao06@gmail.com>
+MIT © xiechao <<xiechao06@gmail.com>>
 
 
 [npm-image]: https://badge.fury.io/js/layerify.svg
