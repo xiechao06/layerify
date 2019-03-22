@@ -16,3 +16,4 @@ jobs:
         skip_cleanup: true
         script:
           - npx semantic-release
+          - npx report-coverage
