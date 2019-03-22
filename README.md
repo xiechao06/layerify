@@ -1,4 +1,4 @@
-# layerify [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# layerify [![License: MIT][license-mit-image]][license-mit] [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 [homepage](https:///xiechao06.github.io/layerify)
 
 make an un-nested object into a nested object by object keys
@@ -109,3 +109,5 @@ MIT © xiechao <xiechao06@gmail.com>
 [daviddm-url]: https://david-dm.org/xiechao06/layerify
 [coveralls-image]: https://coveralls.io/repos/xiechao06/layerify/badge.svg
 [coveralls-url]: https://coveralls.io/r/xiechao06/layerify
+[license-mit-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-mit]: https://opensource.org/licenses/MIT
