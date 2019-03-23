@@ -1,4 +1,7 @@
 # layerify [![License: MIT][license-mit-image]][license-mit] [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/xiechao06/layerify.svg)](https://greenkeeper.io/)
+
 [homepage](https:///xiechao06.github.io/layerify)
 
 make an un-nested object into a nested object by object keys
