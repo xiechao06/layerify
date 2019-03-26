@@ -4,6 +4,7 @@
   "description": "make an un-nested object into a nested object by object keys",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
+  "typings": "dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/xiechao06/layerify.git"
