@@ -16,7 +16,7 @@
     "clean": "rimraf dist",
     "rollup": "rollup -c",
     "build:doc": "typedoc --out doc --mode file --theme minimal --module commonjs src",
-    "prepublishOnly": "run-s lint build && pkg-ok",
+    "prepublishOnly": "npm run build && pkg-ok",
     "deploy:doc": "NODE_DEBUG=gh-pages ts-node scripts/deploy-gh-pages.ts",
     "lint": "tslint -p tsconfig.json *.ts",
     "semantic-release": "semantic-release",
@@ -25,7 +25,8 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "serve:doc": "run-p _serve:doc _open-doc",
     "_serve:doc": "serve doc/",
-    "_open-doc": "sleep 0.1; opn http://127.0.0.1:5000"
+    "_open-doc": "sleep 0.1; opn http://127.0.0.1:5000",
+    "ban": "ban"
   },
   "author": "xiechao06 <xiechao06@gmail.com>",
   "license": "MIT",
@@ -41,6 +42,7 @@
     "@commitlint/config-conventional": "^7.5.0",
     "@types/gh-pages": "^2.0.0",
     "@types/jest": "^24.0.11",
+    "ban-sensitive-files": "^1.9.2",
     "commitizen": "^3.0.7",
     "coveralls": "^3.0.3",
     "cz-conventional-changelog": "^2.1.0",
@@ -79,7 +81,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run ban && npm run test && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

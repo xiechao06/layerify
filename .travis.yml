@@ -17,6 +17,9 @@ jobs:
         script:
           - npx semantic-release
 
+script:
+  - npm run ban -- --all
+
 after_success:
   - npm run report-coverage
 
