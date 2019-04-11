@@ -9,7 +9,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/xiechao06/layerify.svg)](https://greenkeeper.io/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Type definitions](https://img.shields.io/npm/types/layerify.svg)](https://www.typescriptlang.org/)
+[![Type definitions](https://img.shields.io/npm/types/typescript.svg)](https://www.typescriptlang.org/)
 [![Known Vulnerabilities](https://snyk.io/test/github/xiechao06/layerify/badge.svg?targetFile=package.json)](https://snyk.io/test/github/xiechao06/layerify?targetFile=package.json)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![manpm](https://img.shields.io/badge/manpm-compatible-3399ff.svg)](https://github.com/bahmutov/manpm)
