@@ -1,6 +1,6 @@
 {
   "name": "layerify",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "make an un-nested object into a nested object by object keys",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
