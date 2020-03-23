@@ -4,7 +4,7 @@
   "description": "make an un-nested object into a nested object by object keys",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "typings": "dist/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/xiechao06/layerify.git"
@@ -36,14 +36,14 @@
   },
   "homepage": "https://github.com/xiechao06/layerify#readme",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/register": "^7.0.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "@types/gh-pages": "^2.0.0",
     "@types/jest": "^24.0.11",
-    "ban-sensitive-files": "^1.9.2",
+    "ban-sensitive-files": "^1.9.7",
     "commitizen": "^3.0.7",
     "coveralls": "^3.0.3",
     "cz-conventional-changelog": "^2.1.0",
@@ -52,7 +52,7 @@
     "i": "^0.3.6",
     "jest": "^24.5.0",
     "lint-staged": "^8.1.5",
-    "npm": "^6.9.0",
+    "npm": "^6.14.3",
     "npm-run-all": "^4.1.5",
     "opn-cli": "^4.0.0",
     "pkg-ok": "^2.3.1",
@@ -72,8 +72,8 @@
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
-    "typedoc": "^0.14.2",
-    "typescript": "^3.3.4000"
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3"
   },
   "config": {
     "commitizen": {
