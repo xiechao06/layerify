@@ -41,7 +41,7 @@
     "@babel/register": "^7.9.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
-    "@types/gh-pages": "^2.0.0",
+    "@types/gh-pages": "^2.2.0",
     "@types/jest": "^24.0.11",
     "ban-sensitive-files": "^1.9.7",
     "commitizen": "^3.0.7",
