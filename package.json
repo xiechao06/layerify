@@ -44,7 +44,7 @@
     "@types/gh-pages": "^2.0.0",
     "@types/jest": "^24.0.11",
     "ban-sensitive-files": "^1.9.7",
-    "commitizen": "^3.0.7",
+    "commitizen": "^4.0.5",
     "coveralls": "^3.0.3",
     "cz-conventional-changelog": "^2.1.0",
     "gh-pages": "^2.0.1",
