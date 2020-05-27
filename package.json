@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/xiechao06/layerify#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
     "@commitlint/cli": "^7.5.2",
