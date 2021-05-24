@@ -2,10 +2,14 @@ import index from '../src/index';
 
 const layerify = index;
 
+test('null', () => {
+  expect(layerify(null)).toBe(null);
+});
+
 test('not nested', () => {
   const d = {
     a: 1,
-    b: 2
+    b: 2,
   };
   expect(layerify(d)).toEqual(d);
 });
@@ -16,20 +20,20 @@ test('nested', () => {
     b: 2,
     c__x: 1,
     d__y__n: 1,
-    d__y__m: 2
+    d__y__m: 2,
   };
   expect(layerify(d)).toEqual({
     a: 1,
     b: 2,
     c: {
-      x: 1
+      x: 1,
     },
     d: {
       y: {
         n: 1,
-        m: 2
-      }
-    }
+        m: 2,
+      },
+    },
   });
 });
 
@@ -39,7 +43,7 @@ test('ignore null or undefined', () => {
     b: 2,
     c__x: void 0,
     d__y__n: null,
-    d__y__m: null
+    d__y__m: null,
   };
   expect(layerify(d)).toEqual({ a: 1, b: 2 });
 });
@@ -49,26 +53,26 @@ test('array', () => {
     {
       a: 1,
       b: 2,
-      x: null
+      x: null,
     },
     {
       c: 3,
       d__e: 1,
       d__f: 2,
-      d__y: void 0
-    }
+      d__y: void 0,
+    },
   ];
   expect(layerify(arr)).toEqual([
     {
       a: 1,
-      b: 2
+      b: 2,
     },
     {
       c: 3,
       d: {
         e: 1,
-        f: 2
-      }
-    }
+        f: 2,
+      },
+    },
   ]);
 });

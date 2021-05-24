@@ -4,7 +4,10 @@
  * @param obj object to be layerified
  * @param sep seperator that denotes there should be another layer
  */
-const layerifyObj = (obj: object, sep: string = '__') => {
+const layerifyObj = (obj: object | null, sep: string = '__') => {
+  if (obj == null) {
+    return obj;
+  }
   const ret = {};
   for (const k in obj) {
     if (obj.hasOwnProperty(k)) {
@@ -31,10 +34,9 @@ const layerifyObj = (obj: object, sep: string = '__') => {
  * @param obj object/array to be layerified
  * @param sep seperator that denotes there should be another layer
  */
-const layerify = (o: object | object[], sep: string = '__') => {
-  const b = 1;
+const layerify = (o: object | object[] | null, sep: string = '__') => {
   if (Array.isArray(o)) {
-    return o.map(it => layerifyObj(it, sep));
+    return o.map((it) => layerifyObj(it, sep));
   }
   return layerifyObj(o, sep);
 };

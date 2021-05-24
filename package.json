@@ -19,7 +19,7 @@
     "build:doc": "typedoc --out doc --mode file --theme minimal --module commonjs src",
     "prepublishOnly": "npm run build && pkg-ok",
     "deploy:doc": "NODE_DEBUG=gh-pages ts-node scripts/deploy-gh-pages.ts",
-    "lint": "tslint -p tsconfig.json *.ts",
+    "lint": "tslint -p tsconfig.json",
     "semantic-release": "semantic-release",
     "commit": "npx git-cz",
     "lint-staged": "lint-staged",
@@ -87,7 +87,6 @@
   },
   "lint-staged": {
     "*.ts": [
-      "npm run lint",
       "prettier --write",
       "git add"
     ]

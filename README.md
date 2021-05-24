@@ -14,12 +14,11 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![manpm](https://img.shields.io/badge/manpm-compatible-3399ff.svg)](https://github.com/bahmutov/manpm)
 
-
 make an un-nested object into a nested object by object keys
 
 ## Why? [![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
 
-I prefer to use query builders like [knex](https://knexjs.org) rather than ORMs like [bookshelf](https://bookshelfjs.org/), because they are more explicit and
+I prefer to use query builders like [knex](https://knexjs.org) rather than ORM like [bookshelf](https://bookshelfjs.org/), because they are more explicit and
 still you could get validations compared to writing plain sql.
 
 But it is a headache to write a bunch of mess like:
@@ -62,7 +61,6 @@ async function getUser (id) {
 }
 ```
 
-
 ## Installation
 
 ```bash
@@ -94,7 +92,6 @@ check [test/test.js](https://github.com/xiechao06/layerify/blob/master/test/test
 
 * [knex-pg-builder](https://www.npmjs.com/package/knex-pg-builder)
 
-
 ## Development
 
 ```bash
@@ -113,7 +110,6 @@ npm deploy:doc # deploy gh-pages
 ## License
 
 MIT © xiechao <<xiechao06@gmail.com>>
-
 
 [npm-image]: https://badge.fury.io/js/layerify.svg
 [npm-url]: https://npmjs.org/package/layerify
