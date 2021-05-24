@@ -2752,7 +2752,7 @@ img {
 			<a href="#why-a-hrefhttpwwwtedcomtalkssimon_sinek_how_great_leaders_inspire_actionimg-srchttpsimgshieldsiobadgestart20with-why3f-brightgreensvgstyleflat-altstart-with-whya" id="why-a-hrefhttpwwwtedcomtalkssimon_sinek_how_great_leaders_inspire_actionimg-srchttpsimgshieldsiobadgestart20with-why3f-brightgreensvgstyleflat-altstart-with-whya" style="color: inherit; text-decoration: none;">
 				<h2>Why? <a href="http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action"><img src="https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat" alt="start with why"></a></h2>
 			</a>
-			<p>I prefer to use query builders like <a href="https://knexjs.org">knex</a> rather than ORMs like <a href="https://bookshelfjs.org/">bookshelf</a>, because they are more explicit and
+			<p>I prefer to use query builders like <a href="https://knexjs.org">knex</a> rather than ORM like <a href="https://bookshelfjs.org/">bookshelf</a>, because they are more explicit and
 			still you could get validations compared to writing plain sql.</p>
 			<p>But it is a headache to write a bunch of mess like:</p>
 			<pre><code class="language-javascript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUser</span> (<span class="hljs-params">id</span>) </span>{
@@ -2830,7 +2830,7 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 			<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 				<h2>License</h2>
 			</a>
-			<p>MIT © xiechao &lt;<a href="mailto:&#120;&#105;&#101;&#x63;&#x68;&#97;&#111;&#x30;&#54;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#120;&#105;&#101;&#x63;&#x68;&#97;&#111;&#x30;&#54;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>&gt;</p>
+			<p>MIT © xiechao &lt;<a href="mailto:&#x78;&#x69;&#x65;&#99;&#x68;&#97;&#x6f;&#48;&#54;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#x78;&#x69;&#x65;&#99;&#x68;&#97;&#x6f;&#48;&#54;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a>&gt;</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -2853,13 +2853,13 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 				<a name="layerify" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> layerify</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">layerify<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span>, sep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span></li>
+					<li class="tsd-signature tsd-kind-icon">layerify<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, sep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/xiechao06/layerify/blob/7460567/src/index.ts#L34">index.ts:34</a></li>
+								<li>Defined in <a href="https://github.com/xiechao06/layerify/blob/673c264/src/index.ts#L37">index.ts:37</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2870,7 +2870,7 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>o: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>o: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> sep: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;__&quot;</span></h5>
@@ -2881,9 +2881,7 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
-						<ul class="tsd-parameters">
-						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -2891,13 +2889,13 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 				<a name="layerifyobj" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagConst">Const</span> layerify<wbr>Obj</h3>
 				<ul class="tsd-signatures tsd-kind-function">
-					<li class="tsd-signature tsd-kind-icon">layerify<wbr>Obj<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, sep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span></li>
+					<li class="tsd-signature tsd-kind-icon">layerify<wbr>Obj<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, sep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/xiechao06/layerify/blob/7460567/src/index.ts#L7">index.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/xiechao06/layerify/blob/673c264/src/index.ts#L7">index.ts:7</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2908,7 +2906,7 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>obj: <span class="tsd-signature-type">object</span></h5>
+								<h5>obj: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
 										<p>object to be layerified</p>
@@ -2924,9 +2922,7 @@ npm deploy:doc <span class="hljs-comment"># deploy gh-pages</span></code></pre>
 								</div>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
-						<ul class="tsd-parameters">
-						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></h4>
 					</li>
 				</ul>
 			</section>
